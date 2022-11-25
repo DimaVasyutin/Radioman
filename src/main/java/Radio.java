@@ -21,7 +21,7 @@ public class Radio {
         if (newVolume > -1 && newVolume < 11) {
             currentVolume = newVolume;
         }
-        return currentNumberStation;
+        return currentVolume;
     }
 
 
