@@ -1,6 +1,23 @@
 public class Radio {
-    public int currentNumberStation;
-    public int currentVolume;
+    private int currentNumberStation;
+    private int sizeAmountStation = 10;
+    private int currentVolume;
+
+    public Radio() {
+
+    }
+
+    public int getSizeAmountStation() {
+        return sizeAmountStation;
+    }
+
+
+    public int setSizeAmountStation(int newSizeAmountStation) {
+        if (newSizeAmountStation > 0) {
+            sizeAmountStation = newSizeAmountStation;
+        }
+        return sizeAmountStation;
+    }
 
     public int getCurrentNumberStation() {
         return currentNumberStation;
@@ -11,23 +28,23 @@ public class Radio {
     }
 
     public int setCurrentNumberStation(int newCurrentNumberStation) {
-        if (newCurrentNumberStation > -1 && newCurrentNumberStation < 10) {
+        if (newCurrentNumberStation > -1 && newCurrentNumberStation < sizeAmountStation) {
             currentNumberStation = newCurrentNumberStation;
         }
         return currentNumberStation;
     }
 
     public int setVolume(int newVolume) {
-        if (newVolume > -1 && newVolume < 11) {
+        if (newVolume > -1 && newVolume < 101) {
             currentVolume = newVolume;
         }
-        return currentNumberStation;
+        return currentVolume;
     }
 
 
     public void nextNumberStation() {
         currentNumberStation = currentNumberStation + 1;
-        if (currentNumberStation == 10) {
+        if (currentNumberStation == sizeAmountStation) {
             currentNumberStation = 0;
         }
     }
@@ -35,12 +52,12 @@ public class Radio {
     public void prevNumberStation() {
         currentNumberStation = currentNumberStation - 1;
         if (currentNumberStation == -1) {
-            currentNumberStation = 9;
+            currentNumberStation = sizeAmountStation - 1;
         }
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
     }
