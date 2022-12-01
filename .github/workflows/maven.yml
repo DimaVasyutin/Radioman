@@ -1,6 +1,12 @@
 name: Java CI with Maven
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - flaxible
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
