@@ -1,12 +1,12 @@
 name: Java CI with Maven
 
 on:
+  pull_request:
+    branches:
+      - 'flexible'
   push:
     branches:
-      - main
-      - flaxible
-  pull_request:
-    types: [opened, synchronize, reopened]
+      - 'main'
 
 jobs:
   build:
