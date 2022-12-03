@@ -1,23 +1,24 @@
 public class Radio {
     private int currentNumberStation;
-    private int sizeAmountStation = 10;
+    private int sizeAmountStation;
     private int currentVolume;
 
     public Radio() {
+        this.sizeAmountStation = 10;
+    }
 
+    public Radio(int sizeAmountStation) {
+        if (sizeAmountStation > 0) {
+            this.sizeAmountStation = sizeAmountStation;
+        } else {
+            this.sizeAmountStation = 10;
+        }
     }
 
     public int getSizeAmountStation() {
         return sizeAmountStation;
     }
 
-
-    public int setSizeAmountStation(int newSizeAmountStation) {
-        if (newSizeAmountStation > 0) {
-            sizeAmountStation = newSizeAmountStation;
-        }
-        return sizeAmountStation;
-    }
 
     public int getCurrentNumberStation() {
         return currentNumberStation;
