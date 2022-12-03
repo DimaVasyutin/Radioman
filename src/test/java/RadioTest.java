@@ -138,8 +138,8 @@ public class RadioTest {
 
     @Test
     public void shouldSetSizeAmountStation() {
-        Radio radio = new Radio();
-        radio.setSizeAmountStation(30);
+        Radio radio = new Radio(30);
+
 
         int expected = 30;
         int actual = radio.getSizeAmountStation();
@@ -150,8 +150,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextStationWithNewSize() {
-        Radio radio = new Radio();
-        radio.setSizeAmountStation(30);
+        Radio radio = new Radio(30);
         radio.setCurrentNumberStation(25);
         radio.nextNumberStation();
 
@@ -164,8 +163,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrevStationWithNewSize() {
-        Radio radio = new Radio();
-        radio.setSizeAmountStation(30);
+        Radio radio = new Radio(30);
         radio.setCurrentNumberStation(25);
         radio.prevNumberStation();
 
@@ -178,8 +176,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextAboveMaxStationWithNewSize() {
-        Radio radio = new Radio();
-        radio.setSizeAmountStation(30);
+        Radio radio = new Radio(30);
         radio.setCurrentNumberStation(29);
         radio.nextNumberStation();
 
@@ -192,8 +189,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextSubMinStationWithNewSize() {
-        Radio radio = new Radio();
-        radio.setSizeAmountStation(30);
+        Radio radio = new Radio(30);
         radio.setCurrentNumberStation(0);
         radio.prevNumberStation();
 
@@ -206,8 +202,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNegativeSizeAmountStation() {
-        Radio radio = new Radio();
-        radio.setSizeAmountStation(-5);
+        Radio radio = new Radio(-5);
 
         int expected = 10;
         int actual = radio.getSizeAmountStation();
